@@ -17,12 +17,24 @@ const App: React.FC = () => {
     setTodos(prevState => [newTodo, ...prevState]);
   }
 
+  // const toggleHandler = (id: number) => {
+  //   const arr = todos.map(todo => {
+  //     if (todo.id === id) {
+  //       todo.completed = !todo.completed;
+  //     }
+  //     console.log(todo);
+  //     return todo;
+  //   });
+  //   setTodos([...arr]);
+  // }
+
   const toggleHandler = (id: number) => {
     setTodos(prevState =>
       prevState.map(todo => {
         if (todo.id === id ) {
           todo.completed = !todo.completed;
         }
+        console.log('toggleHandler', todo);
         return todo;
       })
     );
@@ -35,7 +47,7 @@ const App: React.FC = () => {
   return <>
     <Navbar/>
     <div className="container">
-
+      {console.log('App',todos)}
       <TodoForm onAdd={addHandler}/>
       <TodoList todos={todos} onRemove={removeHandler} onToggle={toggleHandler}/>
     </div>

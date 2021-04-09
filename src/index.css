@@ -28,6 +28,7 @@ code {
 .todo.completed span {
   text-decoration: line-through;
 }
+
 .todo label {
   width: 100%;
   display: flex;
