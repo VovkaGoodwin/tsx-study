@@ -23,8 +23,9 @@ export const TodosPage: React.FC = () => {
       id: Date.now(),
       completed: false
     }
-    // setTodos([newTodo, ...todos]);
-    setTodos(prevState => [newTodo, ...prevState]);
+    if (title.length > 0) {
+      setTodos(prevState => [newTodo, ...prevState]);
+    }
   }
 
   const toggleHandler = (id: number) => {
